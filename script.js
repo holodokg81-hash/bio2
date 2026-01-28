@@ -1,4 +1,3 @@
-// Заполняем данные
 const avatar = document.getElementById("avatar");
 const nameEl = document.getElementById("name");
 const subtitle = document.getElementById("subtitle");
@@ -25,10 +24,31 @@ config.socials.forEach(s => {
 
 // Кнопка "Обо мне"
 aboutBtn.onclick = () => {
-  if(aboutText.style.display === "block") {
+  if(aboutText.style.display === "block"){
     aboutText.style.display = "none";
   } else {
     aboutText.textContent = config.aboutText;
     aboutText.style.display = "block";
   }
 };
+
+// Музыка
+if(config.music.enabled){
+  const audio = new Audio(config.music.src);
+  audio.volume = config.music.volume;
+
+  const musicBtn = document.createElement("button");
+  musicBtn.textContent = "▶ Music";
+  musicBtn.className = "music-btn";
+  document.querySelector(".container").appendChild(musicBtn);
+
+  musicBtn.onclick = () => {
+    if(audio.paused){
+      audio.play();
+      musicBtn.textContent = "⏸ Music";
+    } else {
+      audio.pause();
+      musicBtn.textContent = "▶ Music";
+    }
+  };
+}
