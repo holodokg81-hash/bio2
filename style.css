@@ -23,10 +23,12 @@ body, html {
   color: #fff;
   z-index: 1;
   padding: 30px;
-  border-radius: 20px;
-  /* background: rgba(0,0,0,0.0);  Убираем черный фон */
-  backdrop-filter: blur(0px); /* Можно оставить blur, если хочешь */
   max-width: 500px;
+
+  /* ВАЖНО */
+  background: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
 }
 
 .avatar {
