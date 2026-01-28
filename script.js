@@ -32,7 +32,7 @@ aboutBtn.onclick = () => {
   }
 };
 
-// Музыка
+// Музыка с toggle
 if(config.music.enabled){
   const audio = new Audio(config.music.src);
   audio.volume = config.music.volume;
